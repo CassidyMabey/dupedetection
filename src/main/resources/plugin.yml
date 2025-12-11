@@ -1,0 +1,22 @@
+name: DupeDetection
+version: 1.0.0
+main: notauthorised.dupedetection.DupeDetectionPlugin
+api-version: 1.21
+description: A plugin to detect and prevent item duplication exploits
+author: YourName
+website: https://github.com/yourusername/dupedetection
+
+commands:
+  dupedetection:
+    description: Main command for DupeDetection
+    usage: /dupedetection <reload|info|limits|setlimit|check|exception|help>
+    permission: dupedetection.admin
+    aliases: [dd, dupedect]
+
+permissions:
+  dupedetection.admin:
+    description: Admin permissions for DupeDetection
+    default: op
+  dupedetection.bypass:
+    description: Bypass dupe detection checks
+    default: false
