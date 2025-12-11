@@ -5,30 +5,28 @@ A powerful Minecraft Paper plugin designed to detect and prevent item duplicatio
 ## 🚀 Features
 
 ### 📦 Large Stack Detection
-- Detects when players have large amounts of items
-- Configurable limits for each item type (e.g. max 512 diamonds, 8 netherite ingots)
-- Checks all storage containers: chests, barrels, hoppers, furnaces, etc.
+- Detects when playerlargecessive amounts o stacks
+- Configurable limits for each item tye (e.g., max 512 diamonds, 8 netherite inChecks Monitors all storage containers: chests, barrels, hoppers, furnaces, etc.
 - Counts total items across ALL inventory slots
 
 ### 🔍 NBT Duplicate Detection
 - Identifies suspicious identical items with same enchantments/modifications
 - Individual configuration per item type
-- Smart detection: only flags items with special NBT data (duplicate enchants, names, etc.)
-- Catches duplication of gear & items
+- Smart detection: only flags items with speduplicate cial NBsdata (snchanted, named, etc.)
+- Catchesgear & itemse enchanted gear
 
-### 🔔 Discord Integration
-- Discord webhook notifications with embeds
-- @everyone mentions
-- Detailed violation reports with player info, location, and teleport commands
-- Puts multiple violations from same container into single message
-
+### 🔔 Discation
+- Real-time Discord webhook embedsns with rich embeds
+iate admin attention
+- Detailed violation reports with player info, location, andPutsort commands
+- Groups multiple violations from same contain
 ![Discord Embed Example](./assets/discordembed.png)
-
-### ⚡ Exception System
-- Excempts specific players or UUIDs from all dupe checks
-- JSON storage for persistent exceptions
-- Easy management through in-game commands
-- Tab completion
+er into single message
+Ecxcemptseption System
+- Whitelist specific players or UUIDs fl dupe checks
+- JSON-based storage for persistent exthroughtions
+- Easy management via in-gands
+- Tab completion support
 
 ## 📋 Requirements
 
@@ -105,20 +103,27 @@ nbt-duplicate-detection:
 ### Detection Process
 1. Player closes container/inventory
 2. System scans all items in the inventory
-3. Checks against configured limits and NBT patterns
-4. Sends Discord notification if violations found
-5. Notifies online operators 
+3. Checks against configurends Discord notification if violations found
+5. Notifies online operators (no message to violating player)
 
 ### Stealth Operation
-- **No player notifications** - violators are unaware of detection
-- **Silent monitoring** - only admins receive alerts
-- **logging** - all activity tracked
+- **No playerl* - violators are unaware of detection
+- **Silent monitoring*Ely asdmins receive alerts
+- **Comprehensive logging** - all activity tracked
 
 ## 🚨 Discord Notifications
 
-Embeds notifications include:
+Rich embed notifications include:
 - **Player Information**: Name, UUID, avatar
-- **Violation Details**: Item types, amounts, limits exceeded
-- **Location Data**: Exact coordinates and world
-- **Quick Actions**: Teleport command
-- **Container Info**: Type of storage block involved
+- **ViolationTeleport command, limits exceeded
+- **Location Data**: Exact coordinaning-based detection
+
+---
+
+**⚠️ Note**: This plugin is designed for Paper servers. Bukkit/Spigot compatibility is not guaranteed.
+
+**Made with ❤️ by notauthorised**
+ur server.
+
+## License
+[Add your license here]

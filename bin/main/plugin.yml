@@ -1,10 +1,12 @@
 name: DupeDetection
-version: 1.0.0
+version: ${version}
 main: notauthorised.dupedetection.DupeDetectionPlugin
-api-version: 1.21
-description: A plugin to detect and prevent item duplication exploits
+api-version: 1.18
+description: A universal plugin to detect and prevent item duplication exploits (1.18.2 - 1.21.8+)
 author: notauthorised
 website: https://github.com/CassidyMabey/dupedetection
+authors: [notauthorised]
+softdepend: [Vault, PlaceholderAPI]
 
 commands:
   dupedetection:

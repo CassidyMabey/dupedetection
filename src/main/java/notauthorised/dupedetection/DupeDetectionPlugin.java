@@ -3,6 +3,7 @@ package notauthorised.dupedetection;
 import notauthorised.dupedetection.listeners.InventoryListener;
 import notauthorised.dupedetection.managers.ExceptionManager;
 import notauthorised.dupedetection.managers.StackDetectionManager;
+import notauthorised.dupedetection.util.VersionCompatibility;
 import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
@@ -25,6 +26,31 @@ public class DupeDetectionPlugin extends JavaPlugin implements TabCompleter {
 
     @Override
     public void onEnable() {
+        // check version compatability
+        if (!isVersionSupported()) {
+            getLogger().severe("==============================================");
+            getLogger().severe("UNSUPPORTED SERVER VERSION DETECTED!");
+            getLogger().severe("This plugin supports Minecraft 1.18.2 - 1.21.8+");
+            getLogger().severe("Your version: " + VersionCompatibility.getServerVersion());
+            getLogger().severe("Plugin will be disabled for safety.");
+            getLogger().severe("==============================================");
+            getServer().getPluginManager().disablePlugin(this);
+            return;
+        }
+        
+        // log version
+        VersionCompatibility.logVersionInfo(this);
+        
+        // warn about spigot
+        if (VersionCompatibility.isSpigot()) {
+            getLogger().warning("========================================");
+            getLogger().warning("RUNNING ON SPIGOT - LIMITED FEATURES");
+            getLogger().warning("For best performance and features,");
+            getLogger().warning("consider switching to Paper or Purpur.");
+            getLogger().warning("Some advanced features may not work.");
+            getLogger().warning("========================================");
+        }
+        
         // save default config
         saveDefaultConfig();
         
@@ -385,5 +411,13 @@ public class DupeDetectionPlugin extends JavaPlugin implements TabCompleter {
         }
         
         return completions;
+    }
+    
+
+    private boolean isVersionSupported() {
+        return VersionCompatibility.is118() || 
+               VersionCompatibility.is119() || 
+               VersionCompatibility.is120() || 
+               VersionCompatibility.is121();
     }
 }
