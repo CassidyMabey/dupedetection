@@ -3,8 +3,8 @@ version: 1.0.0
 main: notauthorised.dupedetection.DupeDetectionPlugin
 api-version: 1.21
 description: A plugin to detect and prevent item duplication exploits
-author: YourName
-website: https://github.com/yourusername/dupedetection
+author: notauthorised
+website: https://github.com/CassidyMabey/dupedetection
 
 commands:
   dupedetection:
